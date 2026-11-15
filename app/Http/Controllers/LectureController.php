@@ -12,7 +12,8 @@ class LectureController extends Controller
      */
     public function index()
     {
-        //
+        $lecturers=Lecture::all();
+        return view('lectures',compact('lecturers'));
     }
 
     /**
@@ -20,7 +21,7 @@ class LectureController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -60,6 +61,7 @@ class LectureController extends Controller
      */
     public function destroy(Lecture $lecture)
     {
-        //
+        $Lecture->delete();
+        return('/lectures');
     }
 }
